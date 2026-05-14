@@ -39,16 +39,10 @@ function RuneCorner({ flip = false }: { flip?: boolean }) {
 function TeamCard({
   member,
   active,
-  index,
-  activeIndex,
 }: {
   member: (typeof TEAM)[0];
   active: boolean;
-  index: number;
-  activeIndex: number;
 }) {
-  const offset = index - activeIndex;
-
   return (
     <div
       className="relative flex-shrink-0 overflow-hidden transition-all duration-500 ease-out"
@@ -345,8 +339,6 @@ export default function OurTeam() {
                   key={member.name + realIdx}
                   member={member}
                   active={realIdx === activeIndex}
-                  index={realIdx}
-                  activeIndex={activeIndex}
                 />
               );
             })}
